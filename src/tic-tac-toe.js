@@ -29,10 +29,13 @@ class TicTacToe {
               this.fieldCountO++;
             }
           }
+          // console.log(`[rowIndex, columnIndex]=${[rowIndex, columnIndex]}`);
+          // console.log(this.field);
   }
 
   isFinished() {
     if (this.getWinner() != null || this.isDraw() === true) return true;
+    return false;
   }
 
   getWinner() {
@@ -42,7 +45,7 @@ class TicTacToe {
         if (this.field[[1, 0]] == 'o' &&  this.field[[1, 1]] == 'o' && this.field[[1, 2]] == 'o') return 'o';
         if (this.field[[2, 0]] == 'o' &&  this.field[[2, 1]] == 'o' && this.field[[2, 2]] == 'o') return 'o';
         if (this.field[[0, 0]] == 'o' &&  this.field[[1, 0]] == 'o' && this.field[[2, 0]] == 'o') return 'o';
-        if (this.field[[0, 1]] == 'o' &&  this.field[[1, 1]] == 'o' && this.field[[2, 0]] == 'o') return 'o';
+        if (this.field[[0, 1]] == 'o' &&  this.field[[1, 1]] == 'o' && this.field[[2, 1]] == 'o') return 'o';
         if (this.field[[0, 2]] == 'o' &&  this.field[[1, 2]] == 'o' && this.field[[2, 2]] == 'o') return 'o';
         if (this.field[[0, 0]] == 'o' &&  this.field[[1, 1]] == 'o' && this.field[[2, 2]] == 'o') return 'o';
         if (this.field[[2, 0]] == 'o' &&  this.field[[1, 1]] == 'o' && this.field[[0, 2]] == 'o') return 'o';
@@ -52,11 +55,12 @@ class TicTacToe {
         if (this.field[[1, 0]] == 'x' &&  this.field[[1, 1]] == 'x' && this.field[[1, 2]] == 'x') return 'x';
         if (this.field[[2, 0]] == 'x' &&  this.field[[2, 1]] == 'x' && this.field[[2, 2]] == 'x') return 'x';
         if (this.field[[0, 0]] == 'x' &&  this.field[[1, 0]] == 'x' && this.field[[2, 0]] == 'x') return 'x';
-        if (this.field[[0, 1]] == 'x' &&  this.field[[1, 1]] == 'x' && this.field[[2, 0]] == 'x') return 'x';
+        if (this.field[[0, 1]] == 'x' &&  this.field[[1, 1]] == 'x' && this.field[[2, 1]] == 'x') return 'x';
         if (this.field[[0, 2]] == 'x' &&  this.field[[1, 2]] == 'x' && this.field[[2, 2]] == 'x') return 'x';
         if (this.field[[0, 0]] == 'x' &&  this.field[[1, 1]] == 'x' && this.field[[2, 2]] == 'x') return 'x';
         if (this.field[[2, 0]] == 'x' &&  this.field[[1, 1]] == 'x' && this.field[[0, 2]] == 'x') return 'x';
-      }
+      } 
+      return null;
     } else return null;
   }
 
